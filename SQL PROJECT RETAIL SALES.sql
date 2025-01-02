@@ -15,7 +15,9 @@ cogs	FLOAT,
 Total_sale FLOAT);
 SELECT * FROM retail_sales_data;
 SELECT count(*) from retail_sales_data;
+
 #### to find out null values in the table### DATA CLEANING
+ 
 select * from retail_sales_data 
 where category is null or quantity is null or price_per_unit is null or cogs is null or total_sale is null;
 delete from retail_sales_data
@@ -33,7 +35,9 @@ cogs is null
 or 
 total_sale is null;
 ### DATA EXPLORATION###
+ 
 ## HOW MANY SALES WE HAVE?##
+ 
 SELECT COUNT(*) AS TOTAL_SALE FROM retail_sales_data;
 -- HOW MANY UNIQUE CUSTOMERS WE HAVE?
 SELECT COUNT(DISTINCT CUSTOMER_ID)  FROM retail_sales_data;
@@ -53,6 +57,7 @@ AND SALE_DATE BETWEEN '2022-11-01' AND '2022-11-30'
 AND QUANTITY>=4 ;
 
 -- Q3. TOTAL SALES FOR EACH CATEGORY?--
+
 SELECT CATEGORY, SUM(TOTAL_SALE) AS NET_SALE,
 COUNT(*) AS TOTAL_ORDERS  FROM RETAIL_SALES_DATA
 GROUP BY 1;
